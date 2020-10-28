@@ -1,11 +1,17 @@
 fn fizzbuzz(input: u64) -> String {
-    if input % 3 == 0 {
-        "Fizz".to_string()
-    } else if input % 5 == 0 {
-        "Buzz".to_string()
-    } else {
-        input.to_string()
+    match (input % 3, input % 5) {
+        (0, _) => "Fizz".to_string(),
+        (_, 0) => "Buzz".to_string(),
+        (_, _) => input.to_string()
     }
+
+//     if input % 3 == 0 {
+//         "Fizz".to_string()
+//     } else if input % 5 == 0 {
+//         "Buzz".to_string()
+//     } else {
+//         input.to_string()
+//     }
 }
 
 fn main() {
