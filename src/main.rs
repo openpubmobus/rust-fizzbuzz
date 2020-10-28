@@ -1,12 +1,16 @@
+fn fizzbuzz (input: u64) -> String {
+    "0".to_string()
+}
+
 fn main() {
     println!("Hello, world!");
 }
 
 #[cfg(test)]
 mod tests {    
-    //use super::*;    
+    use super::*;
     #[test]
-    fn x_test() {
-        assert_eq!(1, 2);
+    fn fizzbuzz_1_test() {
+        assert_eq!(fizzbuzz(1), 1.to_string());
     }
 }
