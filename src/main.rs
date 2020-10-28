@@ -1,21 +1,10 @@
 fn fizzbuzz(input: u64) -> String {
     match (input % 3, input % 5) {
+        (0, 0) => "FizzBuzz".to_string(),
         (0, _) => "Fizz".to_string(),
         (_, 0) => "Buzz".to_string(),
         (_, _) => input.to_string()
     }
-
-//     if input % 3 == 0 {
-//         "Fizz".to_string()
-//     } else if input % 5 == 0 {
-//         "Buzz".to_string()
-//     } else {
-//         input.to_string()
-//     }
-}
-
-fn main() {
-    println!("Hello, world!");
 }
 
 #[cfg(test)]
@@ -32,9 +21,20 @@ mod tests {
         assert_eq!(fizzbuzz(6), "Fizz");
         assert_eq!(fizzbuzz(9), "Fizz");
     }
+
     #[test]
     fn fizzbuzz_multiple_of_5() {
         assert_eq!(fizzbuzz(5), "Buzz");
         assert_eq!(fizzbuzz(10), "Buzz");
+    }
+
+    #[test]
+    fn fizzbuzz_multiple_of_3_and_5() {
+        assert_eq!(fizzbuzz(15), "FizzBuzz");
+    }
+
+    #[test]
+    fn fizzbuzz_1_to_100() {
+        assert_eq!(fizzbuzzrange(3), "1 2 Fizz");
     }
 }
